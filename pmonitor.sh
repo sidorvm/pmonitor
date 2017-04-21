@@ -35,7 +35,7 @@
 display()
 {
   # Obtain the offset and print it as a percentage
-  lsof -o0 -o "$OPT1" "$OPT2" |
+  lsof -w -o0 -o "$OPT1" "$OPT2" |
       awk '
     BEGIN { CONVFMT = "%.2f" }
     $4 ~ /^[0-9]+[ru]$/ && $7 ~ /^0t/ {
